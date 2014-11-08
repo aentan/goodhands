@@ -1,6 +1,25 @@
+# Used for generating absolute URLs
+set :protocol, "http://"
+set :host, "goodhands.co"
+set :port, 80
+helpers do
+  def host_with_port
+    [host, optional_port].compact.join(':')
+  end
+  def optional_port
+    port unless port.to_i == 80
+  end
+  def image_url(source)
+    protocol + host_with_port + image_path(source)
+  end
+end
+
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
+  # Used for generating absolute URLs
+  set :host, Middleman::PreviewServer.host
+  set :port, Middleman::PreviewServer.port
 end
 
 set :css_dir, 'assets/stylesheets'
