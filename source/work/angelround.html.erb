@@ -1,0 +1,37 @@
+---
+title: AngelRound
+work: angelround
+---
+<div class="work">
+
+  <%= partial(:cover, locals: { :work => current_page.data.work }) %>
+  
+  <div class="story">
+    
+    <p class="lead">A halo and a ring are linked to represent <a href="http://angelround.co/" target="_blank"><em>AngelRound</em></a> &ndash; a crowfunding platform to connect great ideas to angel investors, without the cruft.</p>
+    
+    <p class="by">Aen Tan</p>
+    
+    <p>A halo on the left to represent angel investors. A ring on the right to represent fundraising rounds entrepreneurs do. Connect them and you get what AngelRound is all about. Nothing more nothing less.</p>
+    
+    <figure><%= image_tag '/assets/images/work/angelround2.png', class: 'img-responsive' %></figure>
+    
+    <p>The wordmark is set in HvD&rsquo;s <em>Brandon Text</em> bold. The overall form is a geometric one and thus pair well with a geometric typeface like Brandon. I chose Brandon over others like Futura because of its delicate rounded corners.</p>
+    
+    <p>Understated and restrained, the design avoids making itself pompous. By remaining consciously personable, the logo speaks about AngelRound&rsquo;s mission of helping entrepreneurs raise money from people they know and are close to, i.e. friends and family.</p>
+    
+    <p class="text-center"><span class="color-chip" style="background-color:#757AE9"><span>#757AE9</span></span></p>
+    
+    <p>The color violet inspires love and compassion. And also creativity &ndash; qualities found in angel investors and entrepreneurs.</p>
+    
+    <p>AngelRound is currently in private beta. <a href="http://angelround.co" target="_blank">Check it out</a>.</p>
+    
+  </div>
+  
+  <% link_to '/', class: 'lemon-back' do %>
+    <%= partial 'lemons.svg' %>
+  <% end %>
+  
+  <%= partial 'contact' %>
+  
+</div>

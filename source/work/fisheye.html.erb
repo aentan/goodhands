@@ -1,0 +1,23 @@
+---
+title: Fisheye
+work: fisheye
+---
+<div class="work">
+
+  <%= partial(:cover, locals: { :work => current_page.data.work }) %>
+  
+  <div class="story">
+    
+    <p class="lead">Calligraphy and ambiguity dance for Fisheye Pictures, to its director Anthony Chen&rsquo;s sensibilities.</p>
+    
+    <p class="by">Aen Tan</p>
+    
+    <p class="text-center">Details coming soon.</p>
+    
+  </div>
+  
+  <% link_to '/', class: 'lemon-back' do %>
+    <%= partial 'lemons.svg' %>
+  <% end %>
+  
+</div>

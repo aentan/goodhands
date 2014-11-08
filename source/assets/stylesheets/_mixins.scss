@@ -1,0 +1,62 @@
+/*
+MIXINS
+*/
+
+@import 'vendor-prefixes';
+@import 'clearfix';
+
+@mixin img-responsive($display: block) {
+  display: $display;
+  width: 100% \9; // Force IE10 and below to size SVG images correctly
+  max-width: 100%; // Part 1: Set a maximum relative to the parent
+  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+}
+
+@mixin text-hide() {
+  font: #{0/0} a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+@mixin browser-appearance($appearance) {
+  -webkit-appearance: $appearance;
+  -moz-appearance:    $appearance;
+  appearance:         $appearance;
+}
+
+@mixin proportionate-height() {
+  content: "";
+  display: block;
+  height: 0;
+  padding-bottom: 100%;
+}
+
+@mixin y-align-middle {
+  top: 50%;
+  @include translate(0, -50%);
+}
+
+@mixin x-align-center {
+  left: 50%;
+  @include translate(-50%, 0);
+}
+
+@mixin bullseye {
+  top: 50%;
+  left: 50%;
+  @include translate(-50%, -50%);
+}
+
+// Placeholder text
+@mixin placeholder($color: $input-color-placeholder) {
+  // Firefox
+  &::-moz-placeholder {
+    text-transform: lowercase;
+    color: $color;
+    opacity: 1; // See https://github.com/twbs/bootstrap/pull/11526
+  }
+  &:-ms-input-placeholder { color: $color; text-transform: lowercase; } // Internet Explorer 10+
+  &::-webkit-input-placeholder  { color: $color; text-transform: lowercase; } // Safari and Chrome
+}

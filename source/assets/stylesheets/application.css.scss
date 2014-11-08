@@ -1,0 +1,147 @@
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:400,600);
+
+@import 'variables';
+@import 'mixins';
+@import 'normalize';
+@import 'type';
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+/*
+LAYOUT
+*/
+
+html, body, #main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#shim {
+  height: 50%;
+  width: 1px;
+  margin: 0 auto;
+}
+
+#content {
+  @include x-align-center;
+  padding: 48px;
+  position: absolute;
+  width: 100%;
+  max-width: 512px;
+  text-align: center;
+  text-transform: lowercase;
+  @media (min-width: $screen-md-min) {
+    @include bullseye;
+  }
+}
+
+#sentence {
+  font-size: 48px;
+  line-height: 1.334;
+  margin-bottom: 48px;
+}
+
+.dynamo {
+  position: relative;
+  text-align: center;
+  > div {
+    @include x-align-center;
+    position: absolute;
+    text-align: center;
+  } 
+}
+
+#duration {
+  color: #3DBFF3;
+}
+
+#type {
+  color: #41CE96;
+}
+
+#gender {
+  color: #FC4864;
+}
+
+#location {
+  color: #A77BE0;
+}
+
+#mc-embedded-subscribe-form {
+  font-size: 28px;
+  position: relative;
+  margin: 32px 0 0;
+  label {
+    width: 240px;
+    padding: 5px 0;
+    position: absolute;
+    text-align: center;
+    z-index: 0;
+  }
+}
+
+#mce-EMAIL {
+  @include browser-appearance(none);
+  padding: 5px 0;
+  border: 0;
+  border-bottom: 2px solid $brand-primary;
+  width: 240px;
+  outline: none;
+  text-align: center;
+  position: relative;
+  background: transparent;
+  vertical-align: baseline;
+}
+
+#mc-embedded-subscribe {
+  @include text-hide();
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: 2px solid $brand-primary;
+  background: url('../images/ui/arrow.svg') no-repeat 50% 50%;
+  vertical-align: baseline;
+}
+
+#result {
+  visibility: hidden;
+  font-size: 20px;
+  margin: 4px auto;
+  padding-right: 48px;
+  width: 288px;
+  min-height: 40px;
+  &.success,
+  &.error {
+    visibility: visible;
+  }
+  &.success {
+    color: $brand-success;
+  }
+  &.error {
+    color: $brand-error;
+  }
+}
+
+
+/*
+GENERAL
+*/
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+a {
+  color: #767DE6;
+}
