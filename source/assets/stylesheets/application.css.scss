@@ -29,7 +29,7 @@ html, body, #main {
 
 #content {
   @include x-align-center;
-  padding: 48px;
+  padding: 32px;
   position: absolute;
   width: 100%;
   max-width: 512px;
@@ -42,8 +42,11 @@ html, body, #main {
 
 #sentence {
   font-size: 48px;
-  line-height: 1.334;
+  line-height: 1.1;
   margin-bottom: 48px;
+  @media (min-width: $screen-md-min) {
+    line-height: 1.334;
+  }
 }
 
 .dynamo {
@@ -75,7 +78,9 @@ html, body, #main {
 #mc-embedded-subscribe-form {
   font-size: 28px;
   position: relative;
-  margin: 32px 0 0;
+  @media (min-width: $screen-md-min) {
+    margin: 32px 0 0;
+  }
   label {
     width: 240px;
     padding: 5px 0;
@@ -87,10 +92,11 @@ html, body, #main {
 
 #mce-EMAIL {
   @include browser-appearance(none);
+  border-radius: 0;
   padding: 5px 0;
   border: 0;
   border-bottom: 2px solid $brand-primary;
-  width: 240px;
+  width: 224px;
   outline: none;
   text-align: center;
   position: relative;
