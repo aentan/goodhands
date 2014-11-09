@@ -17,9 +17,6 @@ end
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
-  # Used for generating absolute URLs
-  set :host, Middleman::PreviewServer.host
-  set :port, Middleman::PreviewServer.port
 end
 
 set :css_dir, 'assets/stylesheets'
