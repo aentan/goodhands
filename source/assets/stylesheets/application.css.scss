@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:400,600);
+//@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:400,600);
 
 @import 'variables';
 @import 'mixins';
@@ -21,6 +21,11 @@ html, body, #main {
   position: relative;
 }
 
+body {
+  background: url('../images/ui/bg.jpg') no-repeat 50% 50%;
+  background-size: cover;
+}
+
 #shim {
   height: 50%;
   width: 1px;
@@ -32,18 +37,25 @@ html, body, #main {
   padding: 32px;
   position: absolute;
   width: 100%;
-  max-width: 512px;
+  max-width: 800px;
   text-align: center;
-  text-transform: lowercase;
   @media (min-width: $screen-md-min) {
     @include bullseye;
   }
 }
 
+#logo {
+  margin-bottom: 48px;
+}
+
 #sentence {
   font-size: 48px;
-  line-height: 1.2;
+  line-height: 1.5;
   margin-bottom: 48px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  word-spacing: 0.1em;
+  font-weight: 400;
 }
 
 .dynamo {
@@ -57,19 +69,19 @@ html, body, #main {
 }
 
 #duration {
-  color: #3DBFF3;
+  color: #59B4C7;
 }
 
 #type {
-  color: #41CE96;
+  color: #90CEB7;
 }
 
 #gender {
-  color: #FC4864;
+  color: #FB666B;
 }
 
 #location {
-  color: #A77BE0;
+  color: #9C95F9;
 }
 
 #mc-embedded-subscribe-form {
