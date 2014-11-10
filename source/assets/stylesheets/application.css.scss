@@ -24,6 +24,12 @@ html, body, #main {
 body {
   background: url('../images/ui/bg.jpg') no-repeat 50% 50%;
   background-size: cover;
+  overflow: hidden;
+}
+
+#main {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 #shim {
@@ -45,12 +51,12 @@ body {
 }
 
 #logo {
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 #sentence {
   font-size: 48px;
-  line-height: 1.5;
+  line-height: 1.25;
   margin-bottom: 48px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -84,7 +90,7 @@ body {
   color: #9C95F9;
 }
 
-#mc-embedded-subscribe-form {
+#subscribe-form {
   font-size: 28px;
   position: relative;
   @media (min-width: $screen-md-min) {
@@ -99,7 +105,8 @@ body {
   }
 }
 
-#mce-EMAIL {
+input[type="text"],
+input[type="email"] {
   @include browser-appearance(none);
   border-radius: 0;
   padding: 5px 0;
@@ -113,31 +120,37 @@ body {
   vertical-align: baseline;
 }
 
-#mc-embedded-subscribe {
+#subscribe-button {
   @include text-hide();
   width: 40px;
   height: 40px;
   border-radius: 20px;
   border: 2px solid $brand-primary;
   background: url('../images/ui/arrow.svg') no-repeat 50% 50%;
+  background-attachment: scroll;
   vertical-align: baseline;
 }
 
 #result {
+  position: relative;
   visibility: hidden;
   font-size: 20px;
-  margin: 4px auto;
-  padding-right: 48px;
-  width: 288px;
-  min-height: 40px;
+  margin: 8px auto;
+  padding: 2px;
+  width: 264px;
+  text-transform: lowercase;
+  border-radius: 17px;
+  border: 2px solid;
   &.success,
   &.error {
     visibility: visible;
   }
   &.success {
+    border-color: $brand-success;
     color: $brand-success;
   }
   &.error {
+    border-color: $brand-error;
     color: $brand-error;
   }
 }

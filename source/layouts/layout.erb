@@ -24,7 +24,9 @@
   
   <body class="<%= page_classes %>">
     
-    <%= yield %>
+    <div id="main">
+      <%= yield %>
+    </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <%= javascript_include_tag  "application" %>
